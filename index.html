@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>Ex-game</title>
+    <link rel="stylesheet" href="./stylesheet.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="section">
+            <div class="main">
+                <h5>Enter Room</h5>
+                <input type="text" placeholder="Enter room" id="first">
+                <h5>Enter Code</h5>
+                <input type="text" placeholder="Enter code" id="second">
+                <button onclick="gameRoom()">Room</button>
+                <p id="ans" >Null</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function gameRoom() {
+        var room = document.getElementById("first").value;
+        var code  = document.getElementById("second").value;
+        var locked="locked";
+        var unlocked="unlocked";
+        if (code === "2468" && room === "Library") {
+            document.getElementById('ans').innerHTML="unlocked:" +unlocked;
+            console.log("the room is unlocked:" ,unlocked);
+        } else if (code === "7531" && room === "Dungeon") {
+            document.getElementById('ans').innerHTML="unlocked:" +unlocked;
+            console.log("the room is unlocked:" , unlocked);
+        } else if(code==="0000" && room==="other"){
+            document.getElementById('ans').innerHTML="unlocked:" +unlocked;
+             console.log("the room is unlocked:",unlocked);
+        }else{
+            document.getElementById('ans').innerHTML="locked:" +locked;
+            console.log("the room is locked",locked);
+        }
+    }
+
+</script>
+
+</html>
